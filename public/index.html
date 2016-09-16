@@ -164,6 +164,7 @@
             if (this.value !== emailText) {
               this.value = emailText;
               this.style.textDecoration = 'none';
+              ga('send', 'email');
             }
           });
           email.addEventListener('click', function () {
@@ -202,7 +203,7 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-83738291-1', 'auto');
-      //ga('send', 'pageview');
+      ga('send', 'pageview');
 
     </script>
   </body>
