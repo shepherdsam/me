@@ -164,7 +164,7 @@
             if (this.value !== emailText) {
               this.value = emailText;
               this.style.textDecoration = 'none';
-              ga('send', 'email');
+              ga('send', 'event', 'email', 'hover');
             }
           });
           email.addEventListener('click', function () {
