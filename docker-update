@@ -2,7 +2,6 @@
 
 source docker-settings
 
-git pull --rebase
-docker exec $container npm install
 docker stop $container
+git pull --rebase
 docker start $container

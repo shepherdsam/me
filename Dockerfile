@@ -1,7 +1,8 @@
 FROM node:6.5.0
 
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-CMD [ "npm", "start" ]
+CMD [ "./docker-start" ]
 
 EXPOSE 8080
