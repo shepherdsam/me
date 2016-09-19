@@ -1,3 +1,20 @@
 #!/bin/bash
 
-docker run -d -p 80:8080 --name me me
+source docker-settings
+
+if [[ ! -e "$portfile" ]]
+then
+  echo "Missing port file '$portfile'"
+  exit 1
+fi
+
+if [[ ! -e "./Dockerfile" ]]
+then
+  echo "Missing Dockerfile in current directory"
+  exit 2
+fi
+
+port=$(cat $portfile)
+
+docker run -d -p $port:8080 -v $(pwd):/usr/src/app --name $container $image
+./docker-update
