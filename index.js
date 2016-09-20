@@ -39,7 +39,7 @@ var main = function() {
     // Redirect Server
     var redirectServer = getHTTPServer();
 
-    server.get(/.*/, function(req, res, next) {
+    redirectServer.get(/.*/, function(req, res, next) {
       var url = 'https://' + req.headers.host + req.url;
       return res.redirect(301, url, next);
     });
