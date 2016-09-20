@@ -5,4 +5,4 @@ WORKDIR /usr/src/app
 
 CMD [ "./docker-start" ]
 
-EXPOSE 8080
+EXPOSE 8080 8443

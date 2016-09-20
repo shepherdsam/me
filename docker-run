@@ -16,4 +16,4 @@ fi
 
 port=$(cat $portfile)
 
-docker run -d -p $port:8080 -v $(pwd):/usr/src/app --name $container $image
+docker run -d -p $port:8080 443:8443 -v $(pwd):/usr/src/app --name $container $image
