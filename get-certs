@@ -9,3 +9,7 @@ letsencrypt certonlrtonly \
   --domains $2 \
   --server https://acme-v01.api.letsencrypt.org/directory
 
+ln -s $(pwd)/ssl/live/$1/cert.pem ssl/.
+ln -s $(pwd)/ssl/live/$1/chain.pem ssl/.
+ln -s $(pwd)/ssl/live/$1/privkey.pem ssl/.
+

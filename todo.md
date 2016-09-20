@@ -1,10 +1,10 @@
 INBOX:
-- favicon
 - github README
 - github LICENSE
 
 NEXT
-- https
+- favicon
+- Support https redirects/proxy
 
 WORKING
 
@@ -16,11 +16,12 @@ DONE
 - Find a library to serve the webpage.
 - Excluded myself from the stats.
 - Better method for deploying changes.
+- Add Monitoring
+- https
 
 
 NOTES
 
 Host: git pull
 Host: stop/start container
-
 

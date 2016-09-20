@@ -18,6 +18,7 @@ var main = function() {
   var server = restify.createServer({
     certificate: fs.readFileSync('./ssl/cert.pem'),
     key: fs.readFileSync('./ssl/privkey.pem'),
+    ca: fs.readFileSync('./ssl/chain.pem'),
     name: 'shepherdsam.me'
   });
 
