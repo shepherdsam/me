@@ -1,14 +1,18 @@
 INBOX:
-- github README
-- github LICENSE
-
-NEXT
+- Added a copyright line at the bottom styled like a vim footer/status bar.
 - favicon
 - Support https redirects/proxy
+- Make the cursor a actual REPL
+
+NEXT
 
 WORKING
+- github README
 
 DONE
+- Organize files in root
+- Make https configureable
+- github LICENSE
 - Docker
 - Github
 - When someone shows the email address, send a google analytic

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source docker-settings
+source docker/config
 
 docker stop $container
 git pull --rebase

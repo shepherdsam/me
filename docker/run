@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source docker/config
+
+docker run -d -p $http_port:8080 -p $https_port:8443 -v $(pwd):/usr/src/app --name $container $image

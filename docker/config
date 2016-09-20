@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Docker
+image=me
+container=me
+
+# The hosts ports
+http_port=8080
+https_port=8443
+
+# Used for creating the ssl certificate
+domain=
+email=
+
+# Web Server
+HTTPS=false
+
+if [[ -e ".config" ]]
+then
+  source .config
+fi
+
+# Make em' visable
+export HTTPS

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source docker-settings
+source docker/config
 
 docker build -t $image .

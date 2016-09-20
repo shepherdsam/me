@@ -2,19 +2,25 @@ var restify = require('restify');
 var plugins = require('restify-plugins');
 var fs = require('fs');
 
-var main = function() {
-  // HTTP
+var getConfig = function getConfig() {
+  var config = {
+    https: process.env.HTTPS == 'true',
+    httpPort: 8080,
+    httpsPort: 8443
+  };
+
+  return config;
+};
+
+var getHTTPServer = function() {
   var server = restify.createServer({
     name: 'shepherdsam.me'
   });
 
-  server.get(/.*/, function(req, res, next) {
-    var url = 'https://' + req.headers.host + req.url;
-    return res.redirect(301, url, next);
-  });
-  server.listen(8080);
+  return server;
+};
 
-  // HTTPS
+var getHTTPSServer = function getHTTPSServer() {
   var server = restify.createServer({
     certificate: fs.readFileSync('./ssl/cert.pem'),
     key: fs.readFileSync('./ssl/privkey.pem'),
@@ -22,6 +28,28 @@ var main = function() {
     name: 'shepherdsam.me'
   });
 
+  return server;
+};
+
+var main = function() {
+  var config = getConfig();
+
+  if (config.https) {
+
+    // Redirect Server
+    var redirectServer = getHTTPServer();
+
+    server.get(/.*/, function(req, res, next) {
+      var url = 'https://' + req.headers.host + req.url;
+      return res.redirect(301, url, next);
+    });
+    redirectServer.listen(config.httpPort);
+  }
+
+  // Main Server
+  var server = config.https ? getHTTPSServer() : getHTTPServer();
+
+  // Plugins
   server.use(plugins.gzipResponse());
 
   /*
@@ -32,6 +60,8 @@ var main = function() {
     res.send(200, 'Hi!');
     return next();
   });
+
+  // ** Staic Content ** //
 
   // Index.html
   server.get('/', plugins.serveStatic({
@@ -44,7 +74,7 @@ var main = function() {
     directory: './public'
   }));
 
-  server.listen(8443);
+  server.listen(config.https ? config.httpsPort : config.httpPort);
 };
 
 main();

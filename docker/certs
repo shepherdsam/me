@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source docker/config
+
+if [[ "$email" == "" ]]
+then
+  echo "'email' is required. Set in '.config' file"
+  oops=true
+fi
+
+if [[ "$domain" == "" ]]
+then
+  echo "'domain' is required. Set in '.config' file"
+  oops=true
+fi
+
+if [[ $oops == "true" ]]
+then
+  exit 2
+fi
+
+docker exec $container scripts/get-certs $email $domain
