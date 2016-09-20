@@ -5,11 +5,12 @@ INBOX:
 - Make the cursor a actual REPL
 
 NEXT
+- convert this todo file into github issues.
 
 WORKING
-- github README
 
 DONE
+- github README
 - Organize files in root
 - Make https configureable
 - github LICENSE
