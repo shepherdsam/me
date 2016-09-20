@@ -17,9 +17,15 @@ var main = function() {
     return next();
   });
 
-  server.get(/.*/, plugins.serveStatic({
+  // Index.html
+  server.get('/', plugins.serveStatic({
     directory: './public',
     file: 'index.html'
+  }));
+
+  // Everything else
+  server.get(/.*/, plugins.serveStatic({
+    directory: './public'
   }));
 
   server.listen(8080);
