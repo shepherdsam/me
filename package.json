@@ -15,14 +15,17 @@
     "Sam",
     "Shepherd"
   ],
-  "author": "Sam Shepherd",
+  "author": "Sam Shepherd <hello@shepherdsam.me>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/shepherdsam/me/issues"
   },
   "homepage": "https://github.com/shepherdsam/me#readme",
   "dependencies": {
-    "restify": "^5.0.0-beta-1",
-    "restify-plugins": "^1.1.0"
+    "restify": "^5.0.0-beta-3.0",
+    "restify-plugins": "^1.4.0"
+  },
+  "devDependencies": {
+    "letsencrypt-cli": "^2.2.0"
   }
 }

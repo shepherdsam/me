@@ -2,9 +2,7 @@
 
 mkdir -p ssl
 
-npm install -g letsencrypt-cli@2.x
-
-letsencrypt certonly \
+node node_modules/letsencrypt-cli/bin/letsencrypt.js certonly \
   --agree-tos --email $1 \
   --webroot --webroot-path $(pwd)/public \
   --config-dir $(pwd)/ssl \

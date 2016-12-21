@@ -24,5 +24,12 @@ Then turn on https by adding `HTTPS=true` to the `.config` file.
 
 Restart the container with `docker/restart`.
 
+### Renew https
+With the Docker container running, run:
+```
+docker/certs
+docker/restart
+```
+
 ### To Update
 From the host run `docker/update`. This pulls the latest changes from git and restarts the container. On start, the container will run `npm install` to update dependencies.
