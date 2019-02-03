@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# We call this to set up the ENV variables.
-source docker/config
-
-npm install
-npm start

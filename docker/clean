@@ -1,7 +1,0 @@
-#!/bin/bash
-
-source docker/config
-
-docker rm -f $container
-docker rmi $image
-rm -rf node_modules

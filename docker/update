@@ -1,7 +1,0 @@
-#!/bin/bash
-
-source docker/config
-
-docker stop $container
-git pull --rebase
-docker start $container

@@ -1,12 +1,7 @@
 {
   "name": "shepherdsam.me",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Landing page for Sam Shepherd",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shepherdsam/me.git"
@@ -20,12 +15,5 @@
   "bugs": {
     "url": "https://github.com/shepherdsam/me/issues"
   },
-  "homepage": "https://github.com/shepherdsam/me#readme",
-  "dependencies": {
-    "restify": "^5.0.0-beta-3.0",
-    "restify-plugins": "^1.4.0"
-  },
-  "devDependencies": {
-    "letsencrypt-cli": "^2.2.0"
-  }
+  "homepage": "https://github.com/shepherdsam/me#readme"
 }

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source docker/config
-
-docker stop $container
-docker start $container

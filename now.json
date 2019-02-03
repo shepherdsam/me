@@ -1,0 +1,11 @@
+{
+  "name": "shepherdsam.me",
+  "version": 2,
+  "alias": "shepherdsam.me",
+  "builds": [
+    { "src": "public/**", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
