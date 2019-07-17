@@ -8,4 +8,4 @@ Simple static html page that consists of html, css, javascript. Along with some 
 `now` https://zeit.co/now
 
 ### Deploy
-`now && now alias`
+`now --target production`
